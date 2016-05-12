@@ -1,0 +1,18 @@
+var a=API.friends.getRequests({"need_viewed":"1"});
+var i=a.length;
+var in=i;
+while(i!=0){
+i=i-1;
+API.friends.add({"user_id":a[i]});
+}
+a=API.friends.getRequests({"out":"1"});
+i=a.length;
+var out=i;
+var p=0;
+while(i!=0){
+i=i-1;
+API.friends.delete({"user_id":a[i]});
+}
+API.account.setOnline();
+API.status.set({"text":"On"});
+return{"in":in,"out":out};

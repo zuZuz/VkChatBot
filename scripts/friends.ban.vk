@@ -1,0 +1,16 @@
+var a=API.friends.getRequests();
+var i=a.length;
+var in=i;
+while(i!=0){
+i=i-1;
+API.friends.add({"user_id":a[i]});
+}
+a=API.friends.getRequests({"out":"1"});
+i=a.length;
+var out=i;
+while(i!=0){
+i=i-1;
+API.friends.delete({"user_id":a[i]});
+API.account.banUser({"user_id":a[i]});
+}
+return{"in":in,"out":out};
