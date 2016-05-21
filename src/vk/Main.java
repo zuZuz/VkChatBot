@@ -31,7 +31,7 @@ public class Main {
          *
          */
         int maxThreads = 10;
-        String token = "";
+        String token = "4349fbb80b957f09ad6dac11e84d845ef2f7a00fe151b55aaee1681bf1c45f94b144832a389af3ce790a5";
 
         // trying to set vk-account
         try {
